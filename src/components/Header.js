@@ -2,12 +2,18 @@
 
 // import React from 'react' // used to be required
 import PropTypes from 'prop-types'
+import Button from './Button'
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd, showAdd }) => {
+
     return (
-            <header className="container">
+            <header className="header">
                 <h1>{title}</h1>
-                <button className="btn">Add</button>
+                <Button
+                color={showAdd ? 'crimson' : 'green'}
+                text={showAdd ?'Cancel':'Add'}
+                onClick={onAdd} />
+            
             </header>
         )
 }
